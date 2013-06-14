@@ -519,7 +519,7 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
             os.chmod(self, mode)
         return self
 
-    def split(self, separator="/"):
+    def split(self, separator=os.sep):
         return [path(p) for p in super(path, self).split(separator) if p]
 
     def open(self, mode=None, *args, **kwargs):
