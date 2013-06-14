@@ -37,7 +37,7 @@ class PyTest(Command):
 
 
 setup(name='os.path2',
-      version="0.0.2",
+      version="0.0.3",
       data_files = [
          (get_python_lib(), [pth_file]),
       ],
