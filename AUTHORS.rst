@@ -1,2 +1,2 @@
-Sebastian Pawluś
-Jakub Janoszek
+- Sebastian Pawluś
+- Jakub Janoszek
