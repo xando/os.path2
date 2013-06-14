@@ -34,25 +34,25 @@ Status
 ------
 
 Library seems to be pretty stable. Feel free to use it as you want. 
-But I think this no the final version of API. 
+But this may not be the final version of the API. 
 
 
 Install
 -------
 
-You can install it from PyPi, by simply **pip**:
+You can install it from PyPi, by simply using **pip**:
 
 .. code-block:: bash
 
    $ pip install os.path2
 
-only if you don't have pip installed, an alternative method is **easy_install**:
+(only if you don't have pip installed), an alternative method use **easy_install**:
 
 .. code-block:: bash
 
    $ easy_install os.path2
 
-to test it, launch **python**
+to test it launch **python**
 
 .. code-block:: python
    
