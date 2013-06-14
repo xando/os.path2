@@ -1,5 +1,4 @@
 import os
-import pwd
 import sys
 import stat
 import codecs
@@ -125,7 +124,7 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
         user
 
         """
-
+        import pwd  # doesn't work on windows
         return pwd.getpwuid(os.stat(self).st_uid).pw_name
 
     @property
@@ -136,7 +135,7 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
         >>> path('/etc/').group
         root
         """
-
+        import pwd  # doesn't work on windows
         return pwd.getpwuid(os.stat(self).st_gid).pw_name
 
     @property
