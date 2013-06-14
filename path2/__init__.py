@@ -111,10 +111,6 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
     def __exit__(self, exc_type, exc_value, traceback):
         pass
 
-    def run(self, *args, **kwargs):
-        kwargs['cwd'] = self
-        return run(*args, **kwargs)
-
     def __new__(cls, *args):
         if len(args) > 1:
             return super(path, cls).__new__(path, cls.join(*args))
@@ -281,7 +277,7 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
         Returns True if path refers to an existing path.
         Returns False for broken symbolic links.
 
-        .. code-block:: pythonc
+        .. code-block:: python
 
            >>> path('/var/log').exists
            True
@@ -369,12 +365,11 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
                 os.rmdir(self)
         return self
 
-    def cp(self, target, r=False):
+    def cp(self, target):
         """
 
         Copy the file or the contents the directory to **target** destination,
-        **r** parameter needs to be applied to perform
-        this action recursively inside directory.
+        workrs for files and directories as well.
 
         >>> path('dir').cp('dir_copy')
         dir_copy
