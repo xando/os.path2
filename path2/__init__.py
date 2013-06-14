@@ -111,10 +111,6 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
     def __exit__(self, exc_type, exc_value, traceback):
         pass
 
-    def run(self, *args, **kwargs):
-        kwargs['cwd'] = self
-        return run(*args, **kwargs)
-
     def __new__(cls, *args):
         if len(args) > 1:
             return super(path, cls).__new__(path, cls.join(*args))
