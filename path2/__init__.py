@@ -277,7 +277,7 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
         Returns True if path refers to an existing path.
         Returns False for broken symbolic links.
 
-        .. code-block:: pythonc
+        .. code-block:: python
 
            >>> path('/var/log').exists
            True
