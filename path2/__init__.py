@@ -369,12 +369,11 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
                 os.rmdir(self)
         return self
 
-    def cp(self, target, r=False):
+    def cp(self, target):
         """
 
         Copy the file or the contents the directory to **target** destination,
-        **r** parameter needs to be applied to perform
-        this action recursively inside directory.
+        workrs for files and directories as well.
 
         >>> path('dir').cp('dir_copy')
         dir_copy
