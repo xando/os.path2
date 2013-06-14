@@ -37,7 +37,7 @@ class PyTest(Command):
 
 
 setup(name='os.path2',
-      version="0.0.1",
+      version="0.0.2",
       data_files = [
          (get_python_lib(), [pth_file]),
       ],
@@ -47,9 +47,10 @@ setup(name='os.path2',
       url='https://github.com/xando/osome',
       description="The os.path module replacement, with simple API.",
       keywords="os path ",
-      license=path("LICENSE").content,
-      long_description=path("README.rst").content,
+      license=path("LICENSE").open("r").read(),
+      long_description=path("README.rst").open("r").read(),
       include_package_data=True,
+      zip_safe=False,
       platforms=['any'],
       classifiers=[
           'Development Status :: 4 - Beta',
@@ -65,6 +66,6 @@ setup(name='os.path2',
       cmdclass = {
           'install': Install,
           'install_egg_info': InstallEggInfo,
-          'test': PyTest
+          'test': PyTest,
       },
 )
