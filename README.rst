@@ -2,7 +2,7 @@
 from os import path2 as path
 ============================
 
-The **os.path** library replacement with simple API. 
+The **os.path** library replacement with simple API.
 
 
 .. code-block:: python
@@ -33,8 +33,8 @@ The **os.path** library replacement with simple API.
 Status
 ------
 
-Library seems to be pretty stable. Feel free to use it as you want. 
-But I think this no the final version of API. 
+Library seems to be pretty stable. Feel free to use it as you want.
+But I think this no the final version of API.
 
 
 Install
@@ -55,7 +55,7 @@ only if you don't have pip installed, an alternative method is **easy_install**:
 to test it, launch **python**
 
 .. code-block:: python
-   
+
    >>> from os import path2 as path
 
 
@@ -66,3 +66,16 @@ Supported platforms
 * Python2.7
 * Python3.3
 * PyPy1.9
+
+
+Tests
+-----
+
+.. image:: https://api.travis-ci.org/xando/os.path2.png?branch=master
+   :target: https://travis-ci.org/xando/os.path2
+
+
+.. code-block:: bash
+
+   >>> python setup.py test
+
