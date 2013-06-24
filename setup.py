@@ -5,8 +5,7 @@ from setuptools.command.install_egg_info import install_egg_info
 
 from distutils.sysconfig import get_python_lib
 
-from path2 import path
-
+import path2
 
 pth_file = "os.path2.pth"
 
@@ -37,7 +36,7 @@ class PyTest(Command):
 
 
 setup(name='os.path2',
-      version="0.0.3",
+      version=path2.__version__,
       data_files = [
          (get_python_lib(), [pth_file]),
       ],
@@ -47,8 +46,8 @@ setup(name='os.path2',
       url='https://github.com/xando/osome',
       description="The os.path module replacement, with simple API.",
       keywords="os path ",
-      license=path("LICENSE").open("r").read(),
-      long_description=path("README.rst").open("r").read(),
+      license=path2.path("LICENSE").open("r").read(),
+      long_description=path2.path("README.rst").open("r").read(),
       include_package_data=True,
       zip_safe=False,
       platforms=['any'],

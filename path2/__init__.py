@@ -7,6 +7,9 @@ import fnmatch
 import datetime
 
 
+__version__ = "0.0.4"
+
+
 if sys.version.startswith('3'):
     base_string_class = str
     python3 = True
