@@ -38,7 +38,8 @@ class pathmeta(type):
         for method_name in _unicode.__dict__:
             value = getattr(_unicode, method_name)
             if all([callable(value),
-                    method_name not in ('__new__', '__str__', '__getattribute__'),
+                    method_name not in ('__new__', '__str__',
+                                        '__getattribute__'),
                     method_name not in local]):
                 local[method_name] = cls.str_to_path(value)
 
@@ -258,7 +259,6 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
         """
         return datetime.datetime.fromtimestamp(self.m_time)
 
-
     @property
     def size(self):
         """
@@ -451,7 +451,8 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
         """
         sort = sort or (lambda e: (not e.is_dir(), e))
         content = [
-            self / path(e) for e in os.listdir(self) if fnmatch.fnmatch(e, pattern)
+            self / path(e) for e in os.listdir(self) if
+            fnmatch.fnmatch(e, pattern)
         ]
         return sorted(content, key=sort)
 
@@ -515,7 +516,7 @@ class path(pathmeta('base_path', (base_string_class, ), {})):
         # ToDo: this is probably not the 'best' implementation
 
         if isinstance(mode, basestring):
-            mode = sum([(8**i * int(e)) for i,e in \
+            mode = sum([(8**i * int(e)) for i, e in
                         enumerate(reversed(mode.lstrip("0")))])
             os.chmod(self, mode)
         else:
